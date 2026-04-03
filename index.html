@@ -1,118 +1,321 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lavínia Podóloga</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Lavínia Podóloga - Cuidado especializado para seus pés. Agende sua consulta.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- IMAGEM SOCIAL (WhatsApp, Facebook, etc) -->
-  <meta property="og:title" content="Lavínia Podóloga | Cuidado e Saúde para seus Pés">
-  <meta property="og:description" content="Atendimento profissional em podologia com qualidade, higiene e conforto. Agende sua consulta!">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=1200">
-  <meta property="og:type" content="website">
+<title>Lavinia Podóloga</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="description" content="Podóloga especializada em tratamento de unhas encravadas, calosidades e cuidados com os pés.">
 
-  <style>
-    :root {
-      --background: hsl(30, 25%, 97%);
-      --foreground: hsl(20, 15%, 15%);
-      --card: hsl(0, 0%, 100%);
-      --primary: hsl(346, 45%, 55%);
-      --accent: hsl(36, 55%, 70%);
-      --border: hsl(30, 15%, 88%);
-      --muted-foreground: hsl(20, 8%, 50%);
-      --whatsapp: hsl(142, 70%, 49%);
-      --whatsapp-hover: hsl(142, 70%, 42%);
-    }
+<meta name="keywords" content="podóloga, podologia, unha encravada, pé diabético, cuidados com os pés">
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<style>
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--background);
-      color: var(--foreground);
-    }
+html{
+scroll-behavior:smooth;
+font-family:Arial;
+}
 
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-    }
+body{
+margin:0;
+background:#fafafa;
+}
 
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+header{
+text-align:center;
+padding:80px 20px;
+background:white;
+}
 
-    .hero img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+h1{
+margin:0;
+font-size:40px;
+}
 
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-    }
+p{
+color:#555;
+}
 
-    .content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      color: white;
-      padding: 20px;
-    }
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
 
-    .content h1 {
-      font-size: 2.5rem;
-    }
+.search{
+text-align:center;
+margin-bottom:40px;
+}
 
-    .content p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-    }
+.search input{
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+width:250px;
+}
 
-    .btn {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--whatsapp);
-      color: white;
-      padding: 15px 25px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.filters{
+margin-top:15px;
+}
 
-    .btn:hover {
-      background: var(--whatsapp-hover);
-    }
-  </style>
+.filters button{
+padding:8px 14px;
+border-radius:8px;
+border:1px solid #ddd;
+background:white;
+margin:5px;
+cursor:pointer;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+border:1px solid #eee;
+border-radius:10px;
+padding:20px;
+}
+
+.testimonials{
+background:white;
+padding:40px 20px;
+margin-top:60px;
+}
+
+.testimonial{
+margin-bottom:20px;
+}
+
+.map{
+margin-top:60px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:14px 18px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.top{
+position:fixed;
+bottom:80px;
+right:20px;
+padding:10px 14px;
+border-radius:20px;
+border:none;
+cursor:pointer;
+display:none;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<section class="hero">
-  <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=1920&q=80">
-  <div class="overlay"></div>
+<header>
 
-  <div class="content">
-    <h1>Lavínia Podóloga</h1>
-    <p>Cuidado especializado para seus pés. Agende sua consulta.</p>
-  </div>
+<h1>Lavinia Podóloga</h1>
+
+<p>Cuidado profissional para a saúde dos seus pés</p>
+
+</header>
+
+
+<div class="container">
+
+<div class="search">
+
+<input id="search" placeholder="Qual problema você sente nos pés?">
+
+<div class="filters">
+
+<button onclick="filterService('')">Todos</button>
+<button onclick="filterService('unha')">Unhas</button>
+<button onclick="filterService('prevenção')">Prevenção</button>
+<button onclick="filterService('diabetes')">Pé diabético</button>
+
+</div>
+
+</div>
+
+
+<div id="services" class="services"></div>
+
+</div>
+
+
+<section class="testimonials">
+
+<div class="container">
+
+<h2>Depoimentos</h2>
+
+<div class="testimonial">
+⭐️⭐️⭐️⭐️⭐️  
+Excelente atendimento e resolveu minha unha encravada.
+</div>
+
+<div class="testimonial">
+⭐️⭐️⭐️⭐️⭐️  
+Profissional muito cuidadosa e ambiente limpo.
+</div>
+
+</div>
+
 </section>
 
-<a class="btn" href="https://wa.me/5532998016614?text=Ola!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank">
-  📱 Agendar pelo WhatsApp
+
+<section class="map">
+
+<div class="container">
+
+<h2>Localização</h2>
+
+<iframe
+width="100%"
+height="300"
+style="border:0"
+loading="lazy"
+allowfullscreen
+src="https://maps.google.com/maps?q=juiz%20de%20fora&t=&z=13&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
+</div>
+
+</section>
+
+
+<a
+class="whatsapp"
+href="https://wa.me/5532999999999"
+target="_blank">
+
+WhatsApp
+
 </a>
 
+
+<button id="topBtn" class="top">↑</button>
+
+
+<script>
+
+const services = [
+
+{
+title:"Podologia Clínica",
+description:"Tratamento de unhas encravadas e calosidades.",
+category:"unha",
+symptoms:["unha encravada","dor no dedo"]
+},
+
+{
+title:"Cuidado Preventivo",
+description:"Avaliação completa da saúde dos pés.",
+category:"prevenção",
+symptoms:["pele ressecada"]
+},
+
+{
+title:"Pé diabético",
+description:"Tratamento especializado para pacientes diabéticos.",
+category:"diabetes",
+symptoms:["pé diabético"]
+}
+
+]
+
+let currentFilter = ""
+
+function renderServices(){
+
+const container = document.getElementById("services")
+
+const search = document.getElementById("search").value.toLowerCase()
+
+container.innerHTML=""
+
+services.forEach(service=>{
+
+const text =
+service.title.toLowerCase()+
+service.description.toLowerCase()+
+service.symptoms.join(" ").toLowerCase()
+
+if(
+text.includes(search) &&
+(currentFilter=="" || service.category==currentFilter)
+){
+
+container.innerHTML+=`
+
+<div class="card">
+
+<h3>${service.title}</h3>
+
+<p>${service.description}</p>
+
+</div>
+
+`
+
+}
+
+})
+
+}
+
+function filterService(cat){
+
+currentFilter = cat
+renderServices()
+
+}
+
+document.getElementById("search").addEventListener("input",renderServices)
+
+renderServices()
+
+const topBtn = document.getElementById("topBtn")
+
+window.onscroll = function(){
+
+if(document.documentElement.scrollTop > 400){
+
+topBtn.style.display="block"
+
+}else{
+
+topBtn.style.display="none"
+
+}
+
+}
+
+topBtn.onclick = function(){
+
+window.scrollTo({top:0,behavior:"smooth"})
+
+}
+
+</script>
+
 </body>
+
 </html>
+```
